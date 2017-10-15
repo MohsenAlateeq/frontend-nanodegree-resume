@@ -103,8 +103,6 @@ var projects = {
           $("#skills").append(formattedskills);
          var formattedskills = HTMLskills.replace("%data%", bio.skills[2]);
           $("#skills").append(formattedskills);
-         var formattedskills = HTMLskills.replace("%data%", bio.skills[3]);
-          $("#skills").append(formattedskills);
     }
     for(job in work.jobs) {
       $("#workExperience").append(HTMLworkStart);
