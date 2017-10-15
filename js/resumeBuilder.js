@@ -50,14 +50,14 @@ This is empty on purpose! Your code to build the resume will go here.
      {
        "employer": "LAND MARK group",
        "title": "Store Manager",
-       "location": "Hail",
+       "location": "Hail City",
        "dates": "2014 - Dec 2016",
        "description": "Checking all the store work daily, To give the customers a good shopping :)!"
      },
      {
        "employer": "Salamat polyclinic medical group",
        "title": "Relation ship",
-       "location": "Hail",
+       "location": "Hail City",
        "dates": "2010 - Dec 2012",
        "description": "Contacting other related companies, making and running projects."
      }
@@ -105,4 +105,20 @@ var projects = {
           $("#skills").append(formattedskills);
          var formattedskills = HTMLskills.replace("%data%", bio.skills[3]);
           $("#skills").append(formattedskills);
+    }
+    for(job in work.jobs) {
+      $("#workExperience").append(HTMLworkStart);
+
+        var formattedworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        var formattedworkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        var formattedEmployerTitle = formattedworkEmployer + formattedworkTitle;
+      $(".work-entry:last").append(formattedEmployerTitle);
+
+        var formattedworkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+      $(".work-entry:last").append(formattedworkDates);
+
+        var formattedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+      $(".work-entry:last").append(formattedworkDescription);
+        var formattedworkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+      $(".work-entry:last").prepend(formattedworkLocation);
     }
