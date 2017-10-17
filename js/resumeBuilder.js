@@ -14,7 +14,7 @@ This is empty on purpose! Your code to build the resume will go here.
    "welcomeMessage":"Welcome Welcome Welcome!",
    "skills": ["Buliding responsive web","Coding","Drink coffee!"],
    "biopic": "images/fry.jpg"
- }
+ };
 
  var education = {
    "schools": [
@@ -43,7 +43,7 @@ This is empty on purpose! Your code to build the resume will go here.
        "url": "https://www.udemy.com/the-complete-web-developer-course-2/"
      }
    ]
- }
+ };
 
  var work = {
    "jobs": [
@@ -62,7 +62,7 @@ This is empty on purpose! Your code to build the resume will go here.
        "description": "Contacting other related companies, making and running projects."
      }
    ]
- }
+ };
 
 var projects = {
   "project": [
@@ -76,7 +76,7 @@ var projects = {
     ]
     }
   ]
-}
+};
 
 function displayBio() {
    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -98,16 +98,17 @@ function displayBio() {
 
       if(bio.skills.length > 0) {
          $("#header").append(HTMLskillsStart);
-           var formattedskills = HTMLskills.replace("%data%", bio.skills[0]);
+           var formattedskills;
+           formattedskills = HTMLskills.replace("%data%", bio.skills[0]);
             $("#skills").append(formattedskills);
-           var formattedskills = HTMLskills.replace("%data%", bio.skills[1]);
+           formattedskills = HTMLskills.replace("%data%", bio.skills[1]);
             $("#skills").append(formattedskills);
-           var formattedskills = HTMLskills.replace("%data%", bio.skills[2]);
+           formattedskills = HTMLskills.replace("%data%", bio.skills[2]);
             $("#skills").append(formattedskills);
       }
  }
 function displayWork() {
-  for(job in work.jobs) {
+  for(var job in work.jobs) {
     $("#workExperience").append(HTMLworkStart);
 
       var formattedworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -125,7 +126,7 @@ function displayWork() {
   }
 }
 function displayProjects() {
-  for(projt in projects.project) {
+  for(var projt in projects.project) {
     $("#projects").append(HTMLprojectStart);
 
       var formattedprojectTitle = HTMLprojectTitle.replace("%data%", projects.project[projt].title);
@@ -136,14 +137,14 @@ function displayProjects() {
 
       var formattedprojectDescription = HTMLprojectDescription.replace("%data%", projects.project[projt].description);
     $(".project-entry:last").append(formattedprojectDescription);
-        for(img in projects.project[projt].images) {
+        for(var img in projects.project[projt].images) {
           var formattedprojectImage = HTMLprojectImage.replace("%data%", projects.project[projt].images[img]);
           $(".project-entry:last").append(formattedprojectImage);
         }
   }
 }
 function displayEducation() {
-  for(school in education.schools) {
+  for(var school in education.schools) {
       $("#education").append(HTMLschoolStart);
 
       var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
@@ -161,7 +162,7 @@ function displayEducation() {
 
 
   }
-  for(onlineCourse in education.onlineCourses) {
+  for(var onlineCourse in education.onlineCourses) {
     $(".education-entry:last").append(HTMLonlineClasses);
     var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
     var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
