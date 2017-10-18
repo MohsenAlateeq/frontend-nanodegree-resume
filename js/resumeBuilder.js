@@ -99,7 +99,7 @@ bio.display = function() {
             $("#skills").append(formattedskills);
 
       }
- }
+ };
 work.display = function() {
   for(var job = 0; job < work.jobs.length; job++) {
     $("#workExperience").append(HTMLworkStart);
@@ -135,7 +135,7 @@ projects.display = function() {
           $(".project-entry:last").append(formattedprojectImage);
         }
   }
-}
+};
 education.display = function() {
   for(var school = 0; school < education.schools.length; school++) {
       $("#education").append(HTMLschoolStart);
@@ -166,7 +166,7 @@ education.display = function() {
   var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
   $(".education-entry:last").append(formattedonlineURL);
 }
-}
+};
 
 bio.display();
 work.display();
