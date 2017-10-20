@@ -1,7 +1,7 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
-
+var data = "%data%";
  var bio = {
    "name": "Abdulmohsen Alateeq",
    "role": "Web developers",
@@ -52,24 +52,24 @@ This is empty on purpose! Your code to build the resume will go here.
        "title": "Store Manager",
        "location": "Hail City",
        "dates": "2014 - Dec 2016",
-       "description": "Checking all the store work daily, To give the customers a good shopping :)!"
+       "description": "Checking all the store work daily,"+" To give the customers a good shopping :)!"
      },
      {
        "employer": "Salamat polyclinic medical group",
        "title": "Relation ship",
        "location": "Hail City",
        "dates": "2010 - Dec 2012",
-       "description": "Contacting other related companies, making and running projects."
+       "description": "Contacting other related companies,"+" making and running projects."
      }
    ]
  };
 
 var projects = {
-  "project": [
+  "projects": [
     {
       "title": "KSA gate",
       "dates": "2017",
-      "description": "It's a web site for Saudi Arabia country, it will give any one a look and any searching about Saudi Arabia.",
+      "description": "It's a web site for Saudi Arabia country,"+" it will give any one a look and any searching about Saudi Arabia.",
       "images": [
         "images/ksa1.jpg",
         "images/ksa2.jpg"
@@ -79,23 +79,23 @@ var projects = {
 };
 
 bio.display = function() {
-   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+   var formattedRole = HTMLheaderRole.replace(data, bio.role);
    $("#header").prepend(formattedRole);
-   var formattedName = HTMLheaderName.replace("%data%", bio.name);
+   var formattedName = HTMLheaderName.replace(data, bio.name);
     $("#header").prepend(formattedName);
-   var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-   var formattedemail = HTMLemail.replace("%data%", bio.contacts.email);
-   var formattedgithub = HTMLgithub.replace("%data%", bio.contacts.github);
-   var formattedlocation = HTMLlocation.replace("%data%", bio.contacts.location);
+   var formattedMobile = HTMLmobile.replace(data, bio.contacts.mobile);
+   var formattedemail = HTMLemail.replace(data, bio.contacts.email);
+   var formattedgithub = HTMLgithub.replace(data, bio.contacts.github);
+   var formattedlocation = HTMLlocation.replace(data, bio.contacts.location);
     $("#topContacts , #footerContacts").append(formattedMobile, formattedemail, formattedgithub, formattedlocation);
-   var formattedbiopic = HTMLbioPic.replace("%data%", bio.biopic);
-   var formattedwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+   var formattedbiopic = HTMLbioPic.replace(data, bio.biopic);
+   var formattedwelcomeMsg = HTMLwelcomeMsg.replace(data, bio.welcomeMessage);
     $("#header").append(formattedbiopic, formattedwelcomeMsg);
       $("#header").append(HTMLskillsStart);
       for(var skill = 0; skill < bio.skills.length; skill++) {
 
            var formattedskills;
-           formattedskills = HTMLskills.replace("%data%", bio.skills[skill]);
+           formattedskills = HTMLskills.replace(data, bio.skills[skill]);
             $("#skills").append(formattedskills);
 
       }
@@ -104,34 +104,34 @@ work.display = function() {
   for(var job = 0; job < work.jobs.length; job++) {
     $("#workExperience").append(HTMLworkStart);
 
-      var formattedworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-      var formattedworkTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+      var formattedworkEmployer = HTMLworkEmployer.replace(data, work.jobs[job].employer);
+      var formattedworkTitle = HTMLworkTitle.replace(data, work.jobs[job].title);
       var formattedEmployerTitle = formattedworkEmployer + formattedworkTitle;
     $(".work-entry:last").append(formattedEmployerTitle);
 
-      var formattedworkDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+      var formattedworkDates = HTMLworkDates.replace(data, work.jobs[job].dates);
     $(".work-entry:last").append(formattedworkDates);
 
-      var formattedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+      var formattedworkDescription = HTMLworkDescription.replace(data, work.jobs[job].description);
     $(".work-entry:last").append(formattedworkDescription);
-      var formattedworkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+      var formattedworkLocation = HTMLworkLocation.replace(data, work.jobs[job].location);
     $(".work-entry:last").prepend(formattedworkLocation);
   }
 };
 projects.display = function() {
-  for(var projt = 0; projt < projects.project.length; projt++) {
+  for(var projt = 0; projt < projects.projects.length; projt++) {
     $("#projects").append(HTMLprojectStart);
 
-      var formattedprojectTitle = HTMLprojectTitle.replace("%data%", projects.project[projt].title);
+      var formattedprojectTitle = HTMLprojectTitle.replace(data, projects.projects[projt].title);
     $(".project-entry:last").append(formattedprojectTitle);
 
-      var formattedprojectDates = HTMLprojectDates.replace("%data%", projects.project[projt].dates);
+      var formattedprojectDates = HTMLprojectDates.replace(data, projects.projects[projt].dates);
     $(".project-entry:last").append(formattedprojectDates);
 
-      var formattedprojectDescription = HTMLprojectDescription.replace("%data%", projects.project[projt].description);
+      var formattedprojectDescription = HTMLprojectDescription.replace(data, projects.projects[projt].description);
     $(".project-entry:last").append(formattedprojectDescription);
-        for(var img = 0;  img < projects.project[projt].images.length; img++) {
-          var formattedprojectImage = HTMLprojectImage.replace("%data%", projects.project[projt].images[img]);
+        for(var img = 0;  img < projects.projects[projt].images.length; img++) {
+          var formattedprojectImage = HTMLprojectImage.replace(data, projects.projects[projt].images[img]);
           $(".project-entry:last").append(formattedprojectImage);
         }
   }
