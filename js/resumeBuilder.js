@@ -20,10 +20,10 @@ var data = "%data%";
    "schools": [
      {
        "name": "University of Hail",
-       "location": "Hail Province",
+       "location": "Hail Province - College of Computer Science & Engineering",
        "degree": "BA",
        "majors": ["SWE"],
-       "dates": 2018 ,
+       "dates": "2018" ,
        "url": "http://www.uoh.edu.sa/"
      },
      {
@@ -31,7 +31,7 @@ var data = "%data%";
        "location": "Hail Province",
        "degree": "High school",
        "majors": ["Natural Science"],
-       "dates": 2012,
+       "dates": "2012",
        "url": ""
      }
    ],
@@ -39,7 +39,7 @@ var data = "%data%";
      {
        "title": "The Complete Web Developer Course ",
        "school": "Udemy",
-       "dates": 2015,
+       "dates": "2015",
        "url": "https://www.udemy.com/the-complete-web-developer-course-2/"
      }
    ]
@@ -50,7 +50,7 @@ var data = "%data%";
      {
        "employer": "LAND MARK group",
        "title": "Store Manager",
-       "location": "Hail City",
+       "location": "Hail City - Garden Mall",
        "dates": "2014 - Dec 2016",
        "description": "Checking all the store work daily,"+" To give the customers a good shopping :)!"
      },
